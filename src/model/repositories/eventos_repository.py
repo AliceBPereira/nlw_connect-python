@@ -15,7 +15,7 @@ class EventosRepository:
     def select_event(self, event_name: str) -> Eventos:
         with DBconnectiosHandler() as db:
             data= (
-                db.session
+                    db.session
                    .query(Eventos)
                    .filter(Eventos.nome == event_name)
                    .one_or_none()
